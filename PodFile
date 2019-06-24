@@ -1,0 +1,16 @@
+# CocoaPods 官方源
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+target ‘RYVideoDisplay’ do
+
+	pod 'Masonry'
+	pod 'AFNetworking'
+	pod 'MJRefresh'
+	pod 'PLPlayerKit', :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'  #七牛播放器SDK(真机 + 模拟器)
+	pod 'YYModel'
+  pod 'MBProgressHUD'
+
+end

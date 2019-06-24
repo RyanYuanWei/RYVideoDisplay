@@ -3,22 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310FB9231512633038ACFA73 /* libPods-RYVideoDisplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19E541C6DD87181DE6E06CC /* libPods-RYVideoDisplay.a */; };
+		551B557122C0B380000836BF /* RYVideoDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556C22C0B380000836BF /* RYVideoDisplayTableViewCell.m */; };
+		551B557222C0B380000836BF /* RYVideoDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556D22C0B380000836BF /* RYVideoDisplayModel.m */; };
+		551B557322C0B380000836BF /* RYVideoDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */; };
 		55B9217722C09B4A0017EFF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B9217622C09B4A0017EFF5 /* AppDelegate.m */; };
 		55B9217A22C09B4A0017EFF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B9217922C09B4A0017EFF5 /* ViewController.m */; };
 		55B9217D22C09B4A0017EFF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B9217B22C09B4A0017EFF5 /* Main.storyboard */; };
 		55B9217F22C09B4A0017EFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B9217E22C09B4A0017EFF5 /* Assets.xcassets */; };
 		55B9218222C09B4A0017EFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B9218022C09B4A0017EFF5 /* LaunchScreen.storyboard */; };
 		55B9218522C09B4A0017EFF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B9218422C09B4A0017EFF5 /* main.m */; };
-		55B921B422C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B921AF22C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m */; };
-		55B921B522C0A3BE0017EFF5 /* RYVideoDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B921B022C0A3BE0017EFF5 /* RYVideoDisplayModel.m */; };
-		55B921B622C0A3BE0017EFF5 /* RYVideoDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B921B222C0A3BE0017EFF5 /* RYVideoDisplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551B556B22C0B380000836BF /* RYVideoDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayViewController.h; sourceTree = "<group>"; };
+		551B556C22C0B380000836BF /* RYVideoDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayTableViewCell.m; sourceTree = "<group>"; };
+		551B556D22C0B380000836BF /* RYVideoDisplayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayModel.m; sourceTree = "<group>"; };
+		551B556E22C0B380000836BF /* RYVideoDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayTableViewCell.h; sourceTree = "<group>"; };
+		551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayViewController.m; sourceTree = "<group>"; };
+		551B557022C0B380000836BF /* RYVideoDisplayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayModel.h; sourceTree = "<group>"; };
 		55B9217222C09B4A0017EFF5 /* RYVideoDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RYVideoDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B9217522C09B4A0017EFF5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55B9217622C09B4A0017EFF5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,12 +36,9 @@
 		55B9218122C09B4A0017EFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B9218322C09B4A0017EFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B9218422C09B4A0017EFF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		55B921AE22C0A3BE0017EFF5 /* RYVideoDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayViewController.h; sourceTree = "<group>"; };
-		55B921AF22C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayTableViewCell.m; sourceTree = "<group>"; };
-		55B921B022C0A3BE0017EFF5 /* RYVideoDisplayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayModel.m; sourceTree = "<group>"; };
-		55B921B122C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayTableViewCell.h; sourceTree = "<group>"; };
-		55B921B222C0A3BE0017EFF5 /* RYVideoDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayViewController.m; sourceTree = "<group>"; };
-		55B921B322C0A3BE0017EFF5 /* RYVideoDisplayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayModel.h; sourceTree = "<group>"; };
+		56945BA5203F3EAD35BEE240 /* Pods-RYVideoDisplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RYVideoDisplay.debug.xcconfig"; path = "Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay.debug.xcconfig"; sourceTree = "<group>"; };
+		6988CD4F957C7A4062995F6D /* Pods-RYVideoDisplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RYVideoDisplay.release.xcconfig"; path = "Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay.release.xcconfig"; sourceTree = "<group>"; };
+		A19E541C6DD87181DE6E06CC /* libPods-RYVideoDisplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RYVideoDisplay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,17 +46,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				310FB9231512633038ACFA73 /* libPods-RYVideoDisplay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2000BB91F7D15EF1331D0916 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56945BA5203F3EAD35BEE240 /* Pods-RYVideoDisplay.debug.xcconfig */,
+				6988CD4F957C7A4062995F6D /* Pods-RYVideoDisplay.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		551B556A22C0B380000836BF /* VideoDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				551B556B22C0B380000836BF /* RYVideoDisplayViewController.h */,
+				551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */,
+				551B556E22C0B380000836BF /* RYVideoDisplayTableViewCell.h */,
+				551B556C22C0B380000836BF /* RYVideoDisplayTableViewCell.m */,
+				551B557022C0B380000836BF /* RYVideoDisplayModel.h */,
+				551B556D22C0B380000836BF /* RYVideoDisplayModel.m */,
+			);
+			path = VideoDisplay;
+			sourceTree = "<group>";
+		};
 		55B9216922C09B4A0017EFF5 = {
 			isa = PBXGroup;
 			children = (
 				55B9217422C09B4A0017EFF5 /* RYVideoDisplay */,
 				55B9217322C09B4A0017EFF5 /* Products */,
+				2000BB91F7D15EF1331D0916 /* Pods */,
+				5951CE41FBE73ED9E675E31F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,7 +96,7 @@
 		55B9217422C09B4A0017EFF5 /* RYVideoDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				55B921AD22C0A3BE0017EFF5 /* VideoDisplay */,
+				551B556A22C0B380000836BF /* VideoDisplay */,
 				55B9217522C09B4A0017EFF5 /* AppDelegate.h */,
 				55B9217622C09B4A0017EFF5 /* AppDelegate.m */,
 				55B9217822C09B4A0017EFF5 /* ViewController.h */,
@@ -81,17 +110,12 @@
 			path = RYVideoDisplay;
 			sourceTree = "<group>";
 		};
-		55B921AD22C0A3BE0017EFF5 /* VideoDisplay */ = {
+		5951CE41FBE73ED9E675E31F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				55B921AE22C0A3BE0017EFF5 /* RYVideoDisplayViewController.h */,
-				55B921AF22C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m */,
-				55B921B022C0A3BE0017EFF5 /* RYVideoDisplayModel.m */,
-				55B921B122C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.h */,
-				55B921B222C0A3BE0017EFF5 /* RYVideoDisplayViewController.m */,
-				55B921B322C0A3BE0017EFF5 /* RYVideoDisplayModel.h */,
+				A19E541C6DD87181DE6E06CC /* libPods-RYVideoDisplay.a */,
 			);
-			path = VideoDisplay;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55B9218822C09B4A0017EFF5 /* Build configuration list for PBXNativeTarget "RYVideoDisplay" */;
 			buildPhases = (
+				12117B7BA9BB1B5E52F5C923 /* [CP] Check Pods Manifest.lock */,
 				55B9216E22C09B4A0017EFF5 /* Sources */,
 				55B9216F22C09B4A0017EFF5 /* Frameworks */,
 				55B9217022C09B4A0017EFF5 /* Resources */,
+				D4FA2B25B0874167DD936821 /* [CP] Embed Pods Frameworks */,
+				1D46F1D66ED0730266A187B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +186,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12117B7BA9BB1B5E52F5C923 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RYVideoDisplay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D46F1D66ED0730266A187B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4FA2B25B0874167DD936821 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RYVideoDisplay/Pods-RYVideoDisplay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		55B9216E22C09B4A0017EFF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -167,9 +253,9 @@
 				55B9217A22C09B4A0017EFF5 /* ViewController.m in Sources */,
 				55B9218522C09B4A0017EFF5 /* main.m in Sources */,
 				55B9217722C09B4A0017EFF5 /* AppDelegate.m in Sources */,
-				55B921B422C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m in Sources */,
-				55B921B622C0A3BE0017EFF5 /* RYVideoDisplayViewController.m in Sources */,
-				55B921B522C0A3BE0017EFF5 /* RYVideoDisplayModel.m in Sources */,
+				551B557122C0B380000836BF /* RYVideoDisplayTableViewCell.m in Sources */,
+				551B557322C0B380000836BF /* RYVideoDisplayViewController.m in Sources */,
+				551B557222C0B380000836BF /* RYVideoDisplayModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +395,7 @@
 		};
 		55B9218922C09B4A0017EFF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56945BA5203F3EAD35BEE240 /* Pods-RYVideoDisplay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +413,7 @@
 		};
 		55B9218A22C09B4A0017EFF5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6988CD4F957C7A4062995F6D /* Pods-RYVideoDisplay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
