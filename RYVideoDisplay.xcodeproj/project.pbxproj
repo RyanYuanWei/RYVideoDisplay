@@ -13,6 +13,9 @@
 		55B9217F22C09B4A0017EFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B9217E22C09B4A0017EFF5 /* Assets.xcassets */; };
 		55B9218222C09B4A0017EFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B9218022C09B4A0017EFF5 /* LaunchScreen.storyboard */; };
 		55B9218522C09B4A0017EFF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B9218422C09B4A0017EFF5 /* main.m */; };
+		55B921B422C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B921AF22C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m */; };
+		55B921B522C0A3BE0017EFF5 /* RYVideoDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B921B022C0A3BE0017EFF5 /* RYVideoDisplayModel.m */; };
+		55B921B622C0A3BE0017EFF5 /* RYVideoDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B921B222C0A3BE0017EFF5 /* RYVideoDisplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		55B9218122C09B4A0017EFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B9218322C09B4A0017EFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B9218422C09B4A0017EFF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55B921AE22C0A3BE0017EFF5 /* RYVideoDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayViewController.h; sourceTree = "<group>"; };
+		55B921AF22C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayTableViewCell.m; sourceTree = "<group>"; };
+		55B921B022C0A3BE0017EFF5 /* RYVideoDisplayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayModel.m; sourceTree = "<group>"; };
+		55B921B122C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayTableViewCell.h; sourceTree = "<group>"; };
+		55B921B222C0A3BE0017EFF5 /* RYVideoDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayViewController.m; sourceTree = "<group>"; };
+		55B921B322C0A3BE0017EFF5 /* RYVideoDisplayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 		55B9217422C09B4A0017EFF5 /* RYVideoDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				55B921AD22C0A3BE0017EFF5 /* VideoDisplay */,
 				55B9217522C09B4A0017EFF5 /* AppDelegate.h */,
 				55B9217622C09B4A0017EFF5 /* AppDelegate.m */,
 				55B9217822C09B4A0017EFF5 /* ViewController.h */,
@@ -69,6 +79,19 @@
 				55B9218422C09B4A0017EFF5 /* main.m */,
 			);
 			path = RYVideoDisplay;
+			sourceTree = "<group>";
+		};
+		55B921AD22C0A3BE0017EFF5 /* VideoDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				55B921AE22C0A3BE0017EFF5 /* RYVideoDisplayViewController.h */,
+				55B921AF22C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m */,
+				55B921B022C0A3BE0017EFF5 /* RYVideoDisplayModel.m */,
+				55B921B122C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.h */,
+				55B921B222C0A3BE0017EFF5 /* RYVideoDisplayViewController.m */,
+				55B921B322C0A3BE0017EFF5 /* RYVideoDisplayModel.h */,
+			);
+			path = VideoDisplay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +167,9 @@
 				55B9217A22C09B4A0017EFF5 /* ViewController.m in Sources */,
 				55B9218522C09B4A0017EFF5 /* main.m in Sources */,
 				55B9217722C09B4A0017EFF5 /* AppDelegate.m in Sources */,
+				55B921B422C0A3BE0017EFF5 /* RYVideoDisplayTableViewCell.m in Sources */,
+				55B921B622C0A3BE0017EFF5 /* RYVideoDisplayViewController.m in Sources */,
+				55B921B522C0A3BE0017EFF5 /* RYVideoDisplayModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
