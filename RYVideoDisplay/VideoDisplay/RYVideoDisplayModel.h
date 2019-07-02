@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RYVideoDisplayModel : NSObject
 
+@property (nonatomic, copy) NSString *videoId;
+@property (nonatomic, copy) NSString *videoFirstCover;
+@property (nonatomic, copy) NSString *videoUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,5 +12,6 @@ target ‘RYVideoDisplay’ do
 	pod 'PLPlayerKit', :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'  #七牛播放器SDK(真机 + 模拟器)
 	pod 'YYModel'
   pod 'MBProgressHUD'
+  pod 'SDWebImage'
 
 end
