@@ -1,0 +1,29 @@
+//
+//  RYVideoDisply-prefix.pch
+//  RYVideoDisplay
+//
+//  Created by RyanYuan on 2019/7/8.
+//  Copyright © 2019 RyanYuan. All rights reserved.
+//
+
+#ifndef RYVideoDisply_prefix_pch
+#define RYVideoDisply_prefix_pch
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#else
+    #ifndef FOUNDATION_EXPORT
+        #if defined(__cplusplus)
+            #define FOUNDATION_EXPORT extern "C"
+        #else
+            #define FOUNDATION_EXPORT extern
+        #endif
+    #endif
+#endif
+
+// macro definition
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define ScreenScale [NSString stringWithFormat:@"%.2f", SCREEN_WIDTH / 375.f].floatValue
+
+#endif /* RYVideoDisply_prefix_pch */

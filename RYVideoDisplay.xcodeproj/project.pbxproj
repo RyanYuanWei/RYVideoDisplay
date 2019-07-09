@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		310FB9231512633038ACFA73 /* libPods-RYVideoDisplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19E541C6DD87181DE6E06CC /* libPods-RYVideoDisplay.a */; };
+		5512235822D2DFB600389AC1 /* RYStartPlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5512235722D2DFB600389AC1 /* RYStartPlayImageView.m */; };
+		5512235B22D2E21000389AC1 /* RYHeartImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5512235A22D2E21000389AC1 /* RYHeartImageView.m */; };
+		5512235E22D2E5F300389AC1 /* RYLoadingLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5512235D22D2E5F300389AC1 /* RYLoadingLineLayer.m */; };
 		551B557122C0B380000836BF /* RYVideoDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556C22C0B380000836BF /* RYVideoDisplayTableViewCell.m */; };
 		551B557222C0B380000836BF /* RYVideoDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556D22C0B380000836BF /* RYVideoDisplayModel.m */; };
 		551B557322C0B380000836BF /* RYVideoDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */; };
+		5555EA0D22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */; };
+		55770D7D22D2ECAF008281B8 /* VDFlashLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7A22D2ECAF008281B8 /* VDFlashLabel.m */; };
+		55770D7E22D2ECAF008281B8 /* NSTimer+VDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7B22D2ECAF008281B8 /* NSTimer+VDAdd.m */; };
+		55770D7F22D2ECAF008281B8 /* UIView+VDFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7C22D2ECAF008281B8 /* UIView+VDFrame.m */; };
+		55770D8322D2ED0C008281B8 /* XKMusicAnimationPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D8122D2ED0C008281B8 /* XKMusicAnimationPlayView.m */; };
 		55B9217722C09B4A0017EFF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B9217622C09B4A0017EFF5 /* AppDelegate.m */; };
 		55B9217A22C09B4A0017EFF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B9217922C09B4A0017EFF5 /* ViewController.m */; };
 		55B9217D22C09B4A0017EFF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B9217B22C09B4A0017EFF5 /* Main.storyboard */; };
@@ -20,12 +28,29 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5512235622D2DFB600389AC1 /* RYStartPlayImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYStartPlayImageView.h; sourceTree = "<group>"; };
+		5512235722D2DFB600389AC1 /* RYStartPlayImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYStartPlayImageView.m; sourceTree = "<group>"; };
+		5512235922D2E21000389AC1 /* RYHeartImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYHeartImageView.h; sourceTree = "<group>"; };
+		5512235A22D2E21000389AC1 /* RYHeartImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYHeartImageView.m; sourceTree = "<group>"; };
+		5512235C22D2E5F300389AC1 /* RYLoadingLineLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYLoadingLineLayer.h; sourceTree = "<group>"; };
+		5512235D22D2E5F300389AC1 /* RYLoadingLineLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYLoadingLineLayer.m; sourceTree = "<group>"; };
+		5512236022D2E79800389AC1 /* RYVideoDisply-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RYVideoDisply-prefix.pch"; sourceTree = "<group>"; };
 		551B556B22C0B380000836BF /* RYVideoDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayViewController.h; sourceTree = "<group>"; };
 		551B556C22C0B380000836BF /* RYVideoDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayTableViewCell.m; sourceTree = "<group>"; };
 		551B556D22C0B380000836BF /* RYVideoDisplayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayModel.m; sourceTree = "<group>"; };
 		551B556E22C0B380000836BF /* RYVideoDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayTableViewCell.h; sourceTree = "<group>"; };
 		551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYVideoDisplayViewController.m; sourceTree = "<group>"; };
 		551B557022C0B380000836BF /* RYVideoDisplayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayModel.h; sourceTree = "<group>"; };
+		5555EA0B22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+XKEnlargeHitArea.h"; sourceTree = "<group>"; };
+		5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XKEnlargeHitArea.m"; sourceTree = "<group>"; };
+		55770D7722D2ECAF008281B8 /* NSTimer+VDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+VDAdd.h"; sourceTree = "<group>"; };
+		55770D7822D2ECAF008281B8 /* VDFlashLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDFlashLabel.h; sourceTree = "<group>"; };
+		55770D7922D2ECAF008281B8 /* UIView+VDFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VDFrame.h"; sourceTree = "<group>"; };
+		55770D7A22D2ECAF008281B8 /* VDFlashLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDFlashLabel.m; sourceTree = "<group>"; };
+		55770D7B22D2ECAF008281B8 /* NSTimer+VDAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+VDAdd.m"; sourceTree = "<group>"; };
+		55770D7C22D2ECAF008281B8 /* UIView+VDFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VDFrame.m"; sourceTree = "<group>"; };
+		55770D8122D2ED0C008281B8 /* XKMusicAnimationPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKMusicAnimationPlayView.m; sourceTree = "<group>"; };
+		55770D8222D2ED0C008281B8 /* XKMusicAnimationPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKMusicAnimationPlayView.h; sourceTree = "<group>"; };
 		55B9217222C09B4A0017EFF5 /* RYVideoDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RYVideoDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B9217522C09B4A0017EFF5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55B9217622C09B4A0017EFF5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,9 +87,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5512235522D2DE6C00389AC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5555EA0A22D48D7200FAB3A3 /* UIButton+XKEnlargeHitArea */,
+				55770D8622D2ED4D008281B8 /* RYLoadingLineLayer */,
+				55770D8522D2ED41008281B8 /* RYHeartImageView */,
+				55770D8422D2ED35008281B8 /* RYStartPlayImageView */,
+				55770D8022D2ED0C008281B8 /* MusicAnimationPlayView */,
+				55770D7622D2ECAF008281B8 /* VDFlashLabel */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5512235F22D2E76500389AC1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5512236022D2E79800389AC1 /* RYVideoDisply-prefix.pch */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 		551B556A22C0B380000836BF /* VideoDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				5512235522D2DE6C00389AC1 /* Views */,
 				551B556B22C0B380000836BF /* RYVideoDisplayViewController.h */,
 				551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */,
 				551B556E22C0B380000836BF /* RYVideoDisplayTableViewCell.h */,
@@ -73,6 +120,64 @@
 				551B556D22C0B380000836BF /* RYVideoDisplayModel.m */,
 			);
 			path = VideoDisplay;
+			sourceTree = "<group>";
+		};
+		5555EA0A22D48D7200FAB3A3 /* UIButton+XKEnlargeHitArea */ = {
+			isa = PBXGroup;
+			children = (
+				5555EA0B22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.h */,
+				5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */,
+			);
+			path = "UIButton+XKEnlargeHitArea";
+			sourceTree = "<group>";
+		};
+		55770D7622D2ECAF008281B8 /* VDFlashLabel */ = {
+			isa = PBXGroup;
+			children = (
+				55770D7722D2ECAF008281B8 /* NSTimer+VDAdd.h */,
+				55770D7B22D2ECAF008281B8 /* NSTimer+VDAdd.m */,
+				55770D7922D2ECAF008281B8 /* UIView+VDFrame.h */,
+				55770D7C22D2ECAF008281B8 /* UIView+VDFrame.m */,
+				55770D7822D2ECAF008281B8 /* VDFlashLabel.h */,
+				55770D7A22D2ECAF008281B8 /* VDFlashLabel.m */,
+			);
+			path = VDFlashLabel;
+			sourceTree = "<group>";
+		};
+		55770D8022D2ED0C008281B8 /* MusicAnimationPlayView */ = {
+			isa = PBXGroup;
+			children = (
+				55770D8222D2ED0C008281B8 /* XKMusicAnimationPlayView.h */,
+				55770D8122D2ED0C008281B8 /* XKMusicAnimationPlayView.m */,
+			);
+			path = MusicAnimationPlayView;
+			sourceTree = "<group>";
+		};
+		55770D8422D2ED35008281B8 /* RYStartPlayImageView */ = {
+			isa = PBXGroup;
+			children = (
+				5512235622D2DFB600389AC1 /* RYStartPlayImageView.h */,
+				5512235722D2DFB600389AC1 /* RYStartPlayImageView.m */,
+			);
+			path = RYStartPlayImageView;
+			sourceTree = "<group>";
+		};
+		55770D8522D2ED41008281B8 /* RYHeartImageView */ = {
+			isa = PBXGroup;
+			children = (
+				5512235922D2E21000389AC1 /* RYHeartImageView.h */,
+				5512235A22D2E21000389AC1 /* RYHeartImageView.m */,
+			);
+			path = RYHeartImageView;
+			sourceTree = "<group>";
+		};
+		55770D8622D2ED4D008281B8 /* RYLoadingLineLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5512235C22D2E5F300389AC1 /* RYLoadingLineLayer.h */,
+				5512235D22D2E5F300389AC1 /* RYLoadingLineLayer.m */,
+			);
+			path = RYLoadingLineLayer;
 			sourceTree = "<group>";
 		};
 		55B9216922C09B4A0017EFF5 = {
@@ -96,6 +201,7 @@
 		55B9217422C09B4A0017EFF5 /* RYVideoDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				5512235F22D2E76500389AC1 /* Support Files */,
 				551B556A22C0B380000836BF /* VideoDisplay */,
 				55B9217522C09B4A0017EFF5 /* AppDelegate.h */,
 				55B9217622C09B4A0017EFF5 /* AppDelegate.m */,
@@ -250,11 +356,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5512235E22D2E5F300389AC1 /* RYLoadingLineLayer.m in Sources */,
 				55B9217A22C09B4A0017EFF5 /* ViewController.m in Sources */,
 				55B9218522C09B4A0017EFF5 /* main.m in Sources */,
+				5512235B22D2E21000389AC1 /* RYHeartImageView.m in Sources */,
+				55770D7F22D2ECAF008281B8 /* UIView+VDFrame.m in Sources */,
 				55B9217722C09B4A0017EFF5 /* AppDelegate.m in Sources */,
 				551B557122C0B380000836BF /* RYVideoDisplayTableViewCell.m in Sources */,
 				551B557322C0B380000836BF /* RYVideoDisplayViewController.m in Sources */,
+				55770D7D22D2ECAF008281B8 /* VDFlashLabel.m in Sources */,
+				55770D8322D2ED0C008281B8 /* XKMusicAnimationPlayView.m in Sources */,
+				5512235822D2DFB600389AC1 /* RYStartPlayImageView.m in Sources */,
+				55770D7E22D2ECAF008281B8 /* NSTimer+VDAdd.m in Sources */,
+				5555EA0D22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m in Sources */,
 				551B557222C0B380000836BF /* RYVideoDisplayModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97634262UU;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RYVideoDisplay/Support Files/RYVideoDisply-prefix.pch";
 				INFOPLIST_FILE = RYVideoDisplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -418,6 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97634262UU;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RYVideoDisplay/Support Files/RYVideoDisply-prefix.pch";
 				INFOPLIST_FILE = RYVideoDisplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

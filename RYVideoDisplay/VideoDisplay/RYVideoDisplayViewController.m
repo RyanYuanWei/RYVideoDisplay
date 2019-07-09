@@ -52,7 +52,7 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
 #pragma mark - UITableViewDelegate
 
 /**
- * 获取当前 cell 并播放
+ * 获取当前 cell 并播放。tableView willDisplayCell 在 cell 刚出现时就会调用，但实际需求需要等待 cell 完全展示后才播放视频
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.playingVideoRow = self.tableView.contentOffset.y / [UIScreen mainScreen].bounds.size.height;
@@ -68,13 +68,6 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
         [self getRecommendVideoList];
     }
 }
-
-/**
- * 在 cell 刚出现时就会调用，但实际需求需要等待 cell 完全展示后才会播放视频
- */
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//}
 
 /**
  * 停止已消失 cell 播放
@@ -163,7 +156,7 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
 }
 
 /**
- 获取推荐小视频列表
+ 获取小视频列表
  */
 - (void)getRecommendVideoList {
     
@@ -259,12 +252,30 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
     mockVideo.videoId = [NSString stringWithFormat:@"%@01", @(page)];
     mockVideo.videoFirstCover = @"https://p1.pstatp.com/large/292a60006a6b1298a5430.jpg";
     mockVideo.videoUrl = @"https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc56628898e4fd48bfb5d166718688e836b3c0a09eeb2e6d6f44891b75e7bf15174cbdfcd7481f6c1b2c286f7dc9f87d66e4&line=0";
+    mockVideo.authorName = @"XXX";
+    mockVideo.describe = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+    mockVideo.musicName = @"XXX创作的原声";
+    mockVideo.isPraised = YES;
+    mockVideo.likeCount = @"100";
+    mockVideo.commentCount = @"100";
+    mockVideo.shareCount = @"100";
+    mockVideo.authorPortrait = @"";
+    mockVideo.musicImage = @"";
     [videoList addObject:mockVideo];
     {
         RYVideoDisplayModel *mockVideo = [RYVideoDisplayModel new];
         mockVideo.videoId = [NSString stringWithFormat:@"%@02", @(page)];
         mockVideo.videoFirstCover = @"https://p3.pstatp.com/large/2310e0005ad3aeaa55bc7.jpg";
         mockVideo.videoUrl = @"https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc563c103cc9f4349d53f746ad630b60aa681d33a5b43660f544eaf4c5801cc7a76e6c02d1d87ab5620f4a5454d73fa0a5a7&line=0";
+        mockVideo.authorName = @"XXX";
+        mockVideo.describe = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        mockVideo.musicName = @"XXX创作的原声";
+        mockVideo.isPraised = YES;
+        mockVideo.likeCount = @"100";
+        mockVideo.commentCount = @"100";
+        mockVideo.shareCount = @"100";
+        mockVideo.authorPortrait = @"";
+        mockVideo.musicImage = @"";
         [videoList addObject:mockVideo];
     }
     {
@@ -272,6 +283,15 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
         mockVideo.videoId = [NSString stringWithFormat:@"%@03", @(page)];
         mockVideo.videoFirstCover = @"https://p9.pstatp.com/large/279d3000baf9fc151bbe7.jpg";
         mockVideo.videoUrl = @"https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc568b05694b87b49370e6ce61ec8beb3b01da15c15ba2f168be86a5c96bb5d86708f455381a16953fe526374e16d84992f4&line=0";
+        mockVideo.authorName = @"XXX";
+        mockVideo.describe = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        mockVideo.musicName = @"XXX创作的原声";
+        mockVideo.isPraised = YES;
+        mockVideo.likeCount = @"100";
+        mockVideo.commentCount = @"100";
+        mockVideo.shareCount = @"100";
+        mockVideo.authorPortrait = @"";
+        mockVideo.musicImage = @"";
         [videoList addObject:mockVideo];
     }
     {
@@ -279,6 +299,15 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
         mockVideo.videoId = [NSString stringWithFormat:@"%@04", @(page)];
         mockVideo.videoFirstCover = @"https://p3.pstatp.com/large/273760003def77e017a22.jpg";
         mockVideo.videoUrl = @"https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc561d14c81a619ea0613fef0a657f61303e482c027a6ab024faf9a3ffcd9090a282c86c32f5a55e6af2d9e6b19268a62060&line=0";
+        mockVideo.authorName = @"XXX";
+        mockVideo.describe = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        mockVideo.musicName = @"XXX创作的原声";
+        mockVideo.isPraised = YES;
+        mockVideo.likeCount = @"100";
+        mockVideo.commentCount = @"100";
+        mockVideo.shareCount = @"100";
+        mockVideo.authorPortrait = @"";
+        mockVideo.musicImage = @"";
         [videoList addObject:mockVideo];
     }
     {
@@ -286,6 +315,15 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
         mockVideo.videoId = [NSString stringWithFormat:@"%@05", @(page)];
         mockVideo.videoFirstCover = @"https://p3.pstatp.com/large/28fbd00046bb22757a8db.jpg";
         mockVideo.videoUrl = @"https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc56cfcf8204cfca96fa670fc3ea1e06e587d90f090b591c034a776958406fc3f0915123359f610608b50cb1379559669ccf&line=0";
+        mockVideo.authorName = @"XXX";
+        mockVideo.describe = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        mockVideo.musicName = @"XXX创作的原声";
+        mockVideo.isPraised = YES;
+        mockVideo.likeCount = @"100";
+        mockVideo.commentCount = @"100";
+        mockVideo.shareCount = @"100";
+        mockVideo.authorPortrait = @"";
+        mockVideo.musicImage = @"";
         [videoList addObject:mockVideo];
     }
     {
@@ -293,6 +331,15 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
         mockVideo.videoId = [NSString stringWithFormat:@"%@06", @(page)];
         mockVideo.videoFirstCover = @"https://p9.pstatp.com/large/274870002cabbda8f072f.jpg";
         mockVideo.videoUrl = @"https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc56cc3104f79f6639102fc76ca985c4d88f0ddb1855ced975b1f117aa55243e8386399e0a058644c654249a56f29bada1c6&line=0";
+        mockVideo.authorName = @"XXX";
+        mockVideo.describe = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        mockVideo.musicName = @"XXX创作的原声";
+        mockVideo.isPraised = YES;
+        mockVideo.likeCount = @"100";
+        mockVideo.commentCount = @"100";
+        mockVideo.shareCount = @"100";
+        mockVideo.authorPortrait = @"";
+        mockVideo.musicImage = @"";
         [videoList addObject:mockVideo];
     }
     {
@@ -300,6 +347,15 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
         mockVideo.videoId = [NSString stringWithFormat:@"%@07", @(page)];
         mockVideo.videoFirstCover = @"https://p1.pstatp.com/large/2348d00084bd03b6c0f27.jpg";
         mockVideo.videoUrl = @"https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc56332148bbc08b43fa9ee656ae4e4f1e800850e46d1ddd91011a50a09c7459ad112cd1e54218f9653dab5ec4a7ba419765&line=0";
+        mockVideo.authorName = @"XXX";
+        mockVideo.describe = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        mockVideo.musicName = @"XXX创作的原声";
+        mockVideo.isPraised = YES;
+        mockVideo.likeCount = @"100";
+        mockVideo.commentCount = @"100";
+        mockVideo.shareCount = @"100";
+        mockVideo.authorPortrait = @"";
+        mockVideo.musicImage = @"";
         [videoList addObject:mockVideo];
     }
     return videoList.copy;
