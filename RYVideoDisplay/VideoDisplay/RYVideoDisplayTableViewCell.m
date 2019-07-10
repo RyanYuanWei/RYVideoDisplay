@@ -10,10 +10,14 @@
 #import "RYVideoDisplayModel.h"
 #import <PLPlayerKit/PLPlayerKit.h>
 #import <SDWebImage.h>
+#import <Masonry/Masonry.h>
 #import "VDFlashLabel.h"
 #import "XKMusicAnimationPlayView.h"
-#import <Masonry/Masonry.h>
 #import "UIButton+XKEnlargeHitArea.h"
+#import "RYLoadingLineLayer.h"
+#import "RYHeartImageView.h"
+#import "RYStartPlayImageView.h"
+#import "VDFlashLabel.h"
 
 @interface RYVideoDisplayTableViewCell () <PLPlayerDelegate>
 
@@ -24,9 +28,9 @@
 @property (nonatomic, strong) PLPlayer *player; /** 播放器 */
 @property (nonatomic, strong) UIView *videoInfoContainerView; /** 视频信息容器视图 */
 @property (nonatomic, strong) UIImage *blackImage;  /** 黑色背景图 */
-@property (nonatomic, strong) UIImageView *startPlayView; /** 播放按钮视图 */
-@property (nonatomic, strong) UIImageView *heartImageView; /** 点赞动画视图 */
-@property (nonatomic, strong) CALayer *loadingLineLayer; /** 视频 loading 视图 */
+@property (nonatomic, strong) RYStartPlayImageView *startPlayView; /** 播放按钮视图 */
+@property (nonatomic, strong) RYHeartImageView *heartImageView; /** 点赞动画视图 */
+@property (nonatomic, strong) RYLoadingLineLayer *loadingLineLayer; /** 视频 loading 视图 */
 @property (nonatomic, strong) VDFlashLabel *flashLabel; /** 跑马灯 */
 @property (nonatomic, strong) UILabel *nameLabel; /** 作者名字 */
 @property (nonatomic, strong) UILabel *videoDescribeLabel; /** 视频描述 */
@@ -89,7 +93,7 @@
 
  @param model 视频 model
  */
-- (void)configVideoInfoViewsWithModel:(RYVideoDisplayModel *)model{
+- (void)configVideoInfoViewsWithModel:(RYVideoDisplayModel *)model {
     
     // 数据源
     self.model = model;
@@ -129,15 +133,15 @@
     if (userImage && ![userImage isEqualToString:@""]) {
         [self.headerButton sd_setImageWithURL:[NSURL URLWithString:userImage] forState:UIControlStateNormal];
     } else {
-        [self.headerButton setImage:[UIImage imageNamed:@"xk_ic_defult_head"] forState:UIControlStateNormal];
+        [self.headerButton setImage:[UIImage imageNamed:@"ry_ic_defult_head"] forState:UIControlStateNormal];
     }
     
     // 点赞图片
     self.likeButton.enabled = YES;
     if (model.isPraised) {
-        [self.likeButton setBackgroundImage:[UIImage imageNamed:@"xk_ic_video_display_like_highlight"] forState:UIControlStateNormal];
+        [self.likeButton setBackgroundImage:[UIImage imageNamed:@"ry_ic_heart_red"] forState:UIControlStateNormal];
     } else {
-        [self.likeButton setBackgroundImage:[UIImage imageNamed:@"xk_ic_video_display_like_normal"] forState:UIControlStateNormal];
+        [self.likeButton setBackgroundImage:[UIImage imageNamed:@"ry_ic_heart"] forState:UIControlStateNormal];
     }
     
     // 点赞数
@@ -179,36 +183,38 @@
     if (musicRecordImageUrlString && ![musicRecordImageUrlString isEqualToString:@""]) {
         [self.musicRecordButton sd_setImageWithURL:[NSURL URLWithString:musicRecordImageUrlString] forState:UIControlStateNormal];
     } else {
-        [self.musicRecordButton setImage:[UIImage imageNamed:@"xk_ic_video_display_record"] forState:UIControlStateNormal];
+        [self.musicRecordButton setImage:[UIImage imageNamed:@"ry_ic_defult_head"] forState:UIControlStateNormal];
     }
 }
 
-- (void)needToStartPlayVideo{
+- (void)needToStartPlayVideo {
     self.isVideoNeedsToPlay = YES;
 }
 
-- (void)pausePlayVideo{
+- (void)pausePlayVideo {
     self.isVideoNeedsToPlay = NO;
     PLPlayerStatus status = self.player.status;
     if (status == PLPlayerStatusPlaying || status == PLPlayerStatusCaching) {
         [self.player pause];
+        [self.startPlayView showStartPlayView];
     }
 }
 
-- (void)resumePlayVideo{
+- (void)resumePlayVideo {
     self.isVideoNeedsToPlay = YES;
     PLPlayerStatus status = self.player.status;
     if (status == PLPlayerStatusPaused) {
         [self.player resume];
+        [self.startPlayView hiddenStartPlayView];
     }
 }
 
-- (void)stopPlayVideo{
+- (void)stopPlayVideo {
     self.isVideoNeedsToPlay = NO;
     [self.player stop];
 }
 
-- (void)removePlayVideo{
+- (void)removePlayVideo {
     self.isVideoNeedsToPlay = NO;
 }
 
@@ -228,9 +234,9 @@
         state == PLPlayerStatusPaused ||
         state == PLPlayerStatusStopped ||
         state == PLPlayerStatusError) {
-//        [self pauseLoadingLineAnimation];
+        [self.loadingLineLayer stopLoadingLineAnimation];
     } else {
-//        [self startLoadingLineAnimation];
+        [self.loadingLineLayer startLoadingLineAnimation];
     }
     
     // 播放准备是否完成
@@ -264,6 +270,52 @@
  */
 - (void)playerWillEndBackgroundTask:(nonnull PLPlayer *)player {
 //    [self resumePlayVideo];
+}
+
+#pragma mark - event handler
+
+
+/**
+ 单击屏幕
+ */
+- (void)singleTapContainerView:(UITapGestureRecognizer *)sender {
+    PLPlayerStatus status = self.player.status;
+    if (status == PLPlayerStatusPlaying || status == PLPlayerStatusCaching) {
+        [self pausePlayVideo];
+    } else if (status == PLPlayerStatusPaused) {
+        [self resumePlayVideo];
+    }
+}
+
+/**
+ 双击屏幕
+ */
+- (void)doubleTapContainerView:(UITapGestureRecognizer *)sender {
+    
+}
+
+- (void)clickHeaderButton:(UIButton *)sender {
+    
+}
+
+- (void)clickAttentionButton:(UIButton *)sender {
+    
+}
+
+- (void)clickLikeButton:(UIButton *)sender {
+    
+}
+
+- (void)clickCommentButton:(UIButton *)sender {
+    
+}
+
+- (void)clickShareButton:(UIButton *)sender {
+    
+}
+
+- (void)clickMusicRecordButton:(UIButton *)sender {
+    
 }
 
 #pragma mark - private method
@@ -352,13 +404,13 @@
     
     // 滚动label
     UIImageView *musicImageView = [[UIImageView alloc] init];
-    musicImageView.image = [UIImage imageNamed:@"xk_ic_video_display_music_one"];
+    musicImageView.image = [UIImage imageNamed:@"ry_ic_note"];
     musicImageView.contentMode = UIViewContentModeScaleAspectFit;
     [videoInfoContainerView addSubview:musicImageView];
     [musicImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(8);
         make.bottom.offset(-20);
-        make.width.height.equalTo(@(15));
+        make.width.height.equalTo(@(16));
     }];
     
     VDFlashLabel *flashLabel = [VDFlashLabel new];
@@ -380,20 +432,20 @@
     
     // 视频描述Label
     UILabel *videoDescribeLabel = [UILabel new];
-    videoDescribeLabel.textColor = [UIColor darkTextColor];
+    videoDescribeLabel.textColor = [UIColor whiteColor];
     videoDescribeLabel.font = [UIFont systemFontOfSize:13];
     videoDescribeLabel.numberOfLines = 2;
     [videoInfoContainerView addSubview:videoDescribeLabel];
     [videoDescribeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(8);
         make.bottom.mas_equalTo(musicImageView.mas_top).offset(-9);
-        make.width.offset(275);
+        make.width.offset(265);
     }];
     self.videoDescribeLabel = videoDescribeLabel;
     
     // 作者名Label
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.textColor = [UIColor darkTextColor];
+    nameLabel.textColor = [UIColor whiteColor];
     nameLabel.font = [UIFont systemFontOfSize:15];
     [videoInfoContainerView addSubview:nameLabel];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -407,8 +459,8 @@
     XKMusicAnimationPlayView *musicAnimationView = [XKMusicAnimationPlayView new];
     [videoInfoContainerView addSubview:musicAnimationView];
     [musicAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.offset(-20);
-        make.right.offset(-15);
+        make.bottom.offset(-25);
+        make.right.offset(-6);
         make.width.height.offset(100);
     }];
     self.musicAnimationView = musicAnimationView;
@@ -419,54 +471,46 @@
     musicRecordButton.layer.masksToBounds = YES;
     musicRecordButton.adjustsImageWhenDisabled = NO;
     musicRecordButton.adjustsImageWhenHighlighted = NO;
+    musicRecordButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [musicRecordButton addTarget:self action:@selector(clickMusicRecordButton:) forControlEvents:UIControlEventTouchUpInside];
     [videoInfoContainerView addSubview:musicRecordButton];
     [musicRecordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(musicAnimationView.mas_bottom);
         make.right.equalTo(musicAnimationView.mas_right);
-        make.width.and.height.offset(44);
+        make.width.and.height.offset(46);
     }];
     self.musicRecordButton = musicRecordButton;
     
-    UIImageView *musicRecordCenterImageView = [UIImageView new];
-    musicRecordCenterImageView.image = [UIImage imageNamed:@"xk_ic_video_display_record_center"];
-    [videoInfoContainerView addSubview:musicRecordCenterImageView];
-    [musicRecordCenterImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.and.height.offset(20);
-        make.centerX.equalTo(musicRecordButton.mas_centerX);
-        make.centerY.equalTo(musicRecordButton.mas_centerY);
-    }];
-    
     // 分享数量
     UILabel *shareCountLabel = [[UILabel alloc] init];
-    shareCountLabel.font = [UIFont systemFontOfSize:12];
-    shareCountLabel.textColor = [UIColor darkTextColor];
+    shareCountLabel.font = [UIFont systemFontOfSize:14];
+    shareCountLabel.textColor = [UIColor whiteColor];
     shareCountLabel.textAlignment = NSTextAlignmentCenter;
     [videoInfoContainerView addSubview:shareCountLabel];
     [shareCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(musicRecordButton.mas_centerX);
-        make.bottom.mas_equalTo(musicRecordButton.mas_top).offset(-15);
+        make.bottom.mas_equalTo(musicRecordButton.mas_top).offset(-25);
         make.height.offset(12);
     }];
     self.shareCountLabel = shareCountLabel;
     
     // 分享按钮
     UIButton *shareButton = [[UIButton alloc] init];
-    [shareButton setBackgroundImage:[UIImage imageNamed:@"xk_ic_video_display_share"] forState:UIControlStateNormal];
+    [shareButton setBackgroundImage:[UIImage imageNamed:@"ry_ic_sharearrow"] forState:UIControlStateNormal];
     [shareButton addTarget:self action:@selector(clickShareButton:) forControlEvents:UIControlEventTouchUpInside];
     [videoInfoContainerView addSubview:shareButton];
     [shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.offset(53);
-        make.height.offset(37);
+        make.width.offset(40);
+        make.height.offset(40);
         make.centerX.mas_equalTo(musicRecordButton.mas_centerX);
-        make.bottom.mas_equalTo(shareCountLabel.mas_top).offset(0);
+        make.bottom.mas_equalTo(shareCountLabel.mas_top).offset(-5);
     }];
     self.shareButton = shareButton;
     
     // 评论数量
     UILabel *commentCountLabel = [UILabel new];
-    commentCountLabel.font = [UIFont systemFontOfSize:12];
-    commentCountLabel.textColor = [UIColor darkTextColor];
+    commentCountLabel.font = [UIFont systemFontOfSize:14];
+    commentCountLabel.textColor = [UIColor whiteColor];
     commentCountLabel.textAlignment = NSTextAlignmentCenter;
     [videoInfoContainerView addSubview:commentCountLabel];
     [commentCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -478,21 +522,21 @@
     
     // 评论按钮
     UIButton *commentButton = [[UIButton alloc] init];
-    [commentButton setBackgroundImage:[UIImage imageNamed:@"xk_ic_video_display_comment"] forState:UIControlStateNormal];
+    [commentButton setBackgroundImage:[UIImage imageNamed:@"ry_ic_comment"] forState:UIControlStateNormal];
     [commentButton addTarget:self action:@selector(clickCommentButton:) forControlEvents:UIControlEventTouchUpInside];
     [videoInfoContainerView addSubview:commentButton];
     [commentButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.offset(53);
-        make.height.offset(37);
+        make.width.offset(35);
+        make.height.offset(35);
         make.centerX.mas_equalTo(musicRecordButton.mas_centerX);
-        make.bottom.mas_equalTo(commentCountLabel.mas_top).offset(0);
+        make.bottom.mas_equalTo(commentCountLabel.mas_top).offset(-5);
     }];
     self.commentButton = commentButton;
     
     // 点赞数量
     UILabel *likeCountLabel = [UILabel new];
-    likeCountLabel.font = [UIFont systemFontOfSize:12];
-    likeCountLabel.textColor = [UIColor darkTextColor];
+    likeCountLabel.font = [UIFont systemFontOfSize:14];
+    likeCountLabel.textColor = [UIColor whiteColor];
     likeCountLabel.textAlignment = NSTextAlignmentCenter;
     [videoInfoContainerView addSubview:likeCountLabel];
     [likeCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -505,23 +549,23 @@
     // 点赞按钮
     UIButton *likeButton = [UIButton new];
     [likeButton addTarget:self action:@selector(clickLikeButton:) forControlEvents:UIControlEventTouchUpInside];
-    [likeButton setBackgroundImage:[UIImage imageNamed:@"xk_ic_video_display_like"] forState:UIControlStateDisabled];
+    [likeButton setBackgroundImage:[UIImage imageNamed:@"ry_ic_heart"] forState:UIControlStateDisabled];
     [videoInfoContainerView addSubview:likeButton];
     [likeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.offset(53);
-        make.height.offset(34);
+        make.width.offset(37);
+        make.height.offset(37);
         make.centerX.mas_equalTo(musicRecordButton.mas_centerX);
-        make.bottom.mas_equalTo(likeCountLabel.mas_top).offset(0);
+        make.bottom.mas_equalTo(likeCountLabel.mas_top).offset(-5);
     }];
     likeButton.enabled = NO;
     self.likeButton = likeButton;
     
     // 头像背景
     UIImageView *headerBgImageView = [[UIImageView alloc] init];
-    headerBgImageView.image = [UIImage imageNamed:@"xk_bg_video_display_head"];
+    headerBgImageView.image = [UIImage imageNamed:@"ry_ic_head_background"];
     [videoInfoContainerView addSubview:headerBgImageView];
     [headerBgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(likeButton.mas_top).offset(-8);
+        make.bottom.mas_equalTo(likeButton.mas_top).offset(-14.6);
         make.width.height.offset(53);
         make.centerX.mas_equalTo(musicRecordButton.mas_centerX);
     }];
@@ -530,7 +574,8 @@
     UIButton *headerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     headerButton.layer.cornerRadius = 43 * 0.5;
     headerButton.layer.masksToBounds = YES;
-    [headerButton setImage:[UIImage imageNamed:@"xk_ic_defult_head"] forState:UIControlStateNormal];
+    headerButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [headerButton setImage:[UIImage imageNamed:@"ry_ic_defult_head"] forState:UIControlStateNormal];
     [headerButton addTarget:self action:@selector(clickHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
     [videoInfoContainerView addSubview:headerButton];
     [headerButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -542,45 +587,31 @@
     
     // 关注按钮
     UIButton *attentionButton = [UIButton new];
-    [attentionButton setBackgroundImage:[UIImage imageNamed:@"xk_ic_video_display_attention"] forState:UIControlStateNormal];
+    [attentionButton setBackgroundImage:[UIImage imageNamed:@"ry_ic_add"] forState:UIControlStateNormal];
     [attentionButton addTarget:self action:@selector(clickAttentionButton:) forControlEvents:UIControlEventTouchUpInside];
     [videoInfoContainerView addSubview:attentionButton];
     [attentionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.offset(28);
+        make.width.height.offset(20);
         make.centerX.mas_equalTo(headerButton.mas_centerX).offset(1.5);
         make.centerY.mas_equalTo(headerButton.mas_centerY).offset(21.5);
     }];
     self.attentionButton = attentionButton;
     
 // =================================== 其他视图 ===================================
-    
-    // 返回按钮
-    UIButton *backButton = [UIButton new];
-    [backButton setImage:[UIImage imageNamed:@"xk_navigationBar_global_back"] forState:UIControlStateNormal];
-    backButton.adjustsImageWhenHighlighted = NO;
-    [backButton addTarget:self action:@selector(clickBackButton:) forControlEvents:UIControlEventTouchUpInside];
-    [videoInfoContainerView addSubview:backButton];
-    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).offset(32);
-        make.left.equalTo(self.contentView.mas_left).offset(20);
-        make.width.equalTo(@(10));
-        make.height.equalTo(@(18));
-    }];
-    backButton.hitEdgeInsets = UIEdgeInsetsMake(-20, -20, -20, -20);
-    
+
     // 播放按钮
-    UIImageView *startPlayView = [UIImageView new];
+    RYStartPlayImageView *startPlayView = [RYStartPlayImageView new];
     startPlayView.hidden = YES;
-    [startPlayView setImage:[UIImage imageNamed:@"xk_ic_video_display_play"]];
+    [startPlayView setImage:[UIImage imageNamed:@"ry_ic_video_play"]];
     [videoInfoContainerView addSubview:startPlayView];
     [startPlayView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.offset(84);
+        make.width.height.offset(64);
         make.center.equalTo(self.contentView);
     }];
     self.startPlayView = startPlayView;
     
     // 点赞/取消点赞动画视图
-    UIImageView *heartImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"xk_ic_video_display_like_highlight"]];
+    RYHeartImageView *heartImageView = [[RYHeartImageView alloc] initWithImage:[UIImage imageNamed:@"ry_ic_heart_red_big"]];
     heartImageView.frame = CGRectMake(0, 0, 53, 34);
     heartImageView.hidden = YES;
     [videoInfoContainerView addSubview:heartImageView];
@@ -596,7 +627,7 @@
         make.height.offset(1);
         make.bottom.offset(-10);
     }];
-    CALayer *loadingLineLayer = [CALayer new];
+    RYLoadingLineLayer *loadingLineLayer = [RYLoadingLineLayer new];
     loadingLineLayer.backgroundColor = [UIColor whiteColor].CGColor;
     [loadingLineContainerView.layer addSublayer:loadingLineLayer];
     loadingLineLayer.frame = CGRectMake(SCREEN_WIDTH / 2, 0, 1, 1);
