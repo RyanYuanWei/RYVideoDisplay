@@ -15,6 +15,7 @@
 		551B557222C0B380000836BF /* RYVideoDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556D22C0B380000836BF /* RYVideoDisplayModel.m */; };
 		551B557322C0B380000836BF /* RYVideoDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */; };
 		5555EA0D22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */; };
+		5559ECA722DDB3B800C37107 /* RYVideoRecordeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ECA622DDB3B800C37107 /* RYVideoRecordeViewController.m */; };
 		55770D7D22D2ECAF008281B8 /* VDFlashLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7A22D2ECAF008281B8 /* VDFlashLabel.m */; };
 		55770D7E22D2ECAF008281B8 /* NSTimer+VDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7B22D2ECAF008281B8 /* NSTimer+VDAdd.m */; };
 		55770D7F22D2ECAF008281B8 /* UIView+VDFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7C22D2ECAF008281B8 /* UIView+VDFrame.m */; };
@@ -43,6 +44,8 @@
 		551B557022C0B380000836BF /* RYVideoDisplayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYVideoDisplayModel.h; sourceTree = "<group>"; };
 		5555EA0B22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+XKEnlargeHitArea.h"; sourceTree = "<group>"; };
 		5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XKEnlargeHitArea.m"; sourceTree = "<group>"; };
+		5559ECA522DDB3B800C37107 /* RYVideoRecordeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYVideoRecordeViewController.h; sourceTree = "<group>"; };
+		5559ECA622DDB3B800C37107 /* RYVideoRecordeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYVideoRecordeViewController.m; sourceTree = "<group>"; };
 		55770D7722D2ECAF008281B8 /* NSTimer+VDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+VDAdd.h"; sourceTree = "<group>"; };
 		55770D7822D2ECAF008281B8 /* VDFlashLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDFlashLabel.h; sourceTree = "<group>"; };
 		55770D7922D2ECAF008281B8 /* UIView+VDFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VDFrame.h"; sourceTree = "<group>"; };
@@ -131,6 +134,15 @@
 			path = "UIButton+XKEnlargeHitArea";
 			sourceTree = "<group>";
 		};
+		5559ECA422DDAAC800C37107 /* VideoRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				5559ECA522DDB3B800C37107 /* RYVideoRecordeViewController.h */,
+				5559ECA622DDB3B800C37107 /* RYVideoRecordeViewController.m */,
+			);
+			path = VideoRecorder;
+			sourceTree = "<group>";
+		};
 		55770D7622D2ECAF008281B8 /* VDFlashLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				5512235F22D2E76500389AC1 /* Support Files */,
+				5559ECA422DDAAC800C37107 /* VideoRecorder */,
 				551B556A22C0B380000836BF /* VideoDisplay */,
 				55B9217522C09B4A0017EFF5 /* AppDelegate.h */,
 				55B9217622C09B4A0017EFF5 /* AppDelegate.m */,
@@ -357,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5512235E22D2E5F300389AC1 /* RYLoadingLineLayer.m in Sources */,
+				5559ECA722DDB3B800C37107 /* RYVideoRecordeViewController.m in Sources */,
 				55B9217A22C09B4A0017EFF5 /* ViewController.m in Sources */,
 				55B9218522C09B4A0017EFF5 /* main.m in Sources */,
 				5512235B22D2E21000389AC1 /* RYHeartImageView.m in Sources */,

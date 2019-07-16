@@ -11,10 +11,11 @@
 #import "RYVideoDisplayModel.h"
 #import <MJRefresh.h>
 #import <SDWebImage.h>
+#import "RYVideoRecordeViewController.h"
 
 static const NSInteger kVideoDisplayViewControllerPageSize = 7;
 
-@interface RYVideoDisplayViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface RYVideoDisplayViewController () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -100,6 +101,13 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
     return cell;
 }
 
+#pragma mark - events
+
+- (void)clickRecorderButtom:(UIControl *)sender {
+    RYVideoRecordeViewController *recordeViewController = [RYVideoRecordeViewController new];
+    [self.navigationController pushViewController:recordeViewController animated:YES];
+}
+
 #pragma mark - private method
 
 /**
@@ -110,6 +118,10 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
     // 熄屏处理
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     self.view.backgroundColor = [UIColor blackColor];
+    
+    // 导航栏处理
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
     // 初始化 tableView
     self.tableView = [UITableView new];
@@ -141,6 +153,36 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [strongSelf.tableView.mj_header endRefreshing];
         });
+    }];
+    
+    // 初始化底部容器视图
+    UIView *buttomBar = [UIView new];
+    [self.view addSubview:buttomBar];
+    buttomBar.backgroundColor = [UIColor clearColor];
+    [buttomBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.leading.equalTo(self.view);
+        make.trailing.equalTo(self.view);
+        make.height.equalTo(@(45));
+    }];
+    
+    UIView *buttomBarLine = [UIView new];
+    buttomBarLine.backgroundColor = [UIColor colorWithWhite:1 alpha:0.2];
+    [buttomBar addSubview:buttomBarLine];
+    [buttomBarLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(buttomBar.mas_top);
+        make.leading.equalTo(buttomBar);
+        make.trailing.equalTo(buttomBar);
+        make.height.equalTo(@(1));
+    }];
+    
+    UIButton *recorderButtom = [UIButton new];
+    [recorderButtom setImage:[UIImage imageNamed:@"ry_ic_record"] forState:UIControlStateNormal];
+    [recorderButtom addTarget:self action:@selector(clickRecorderButtom:) forControlEvents:UIControlEventTouchUpInside];
+    [buttomBar addSubview:recorderButtom];
+    [recorderButtom mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(buttomBar.center);
+        make.width.height.offset(32);
     }];
 }
 
@@ -225,7 +267,7 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
 }
 
 /**
- * 单个视频播放后浏览量+1
+ * 记录单个视频浏览量
  */
 - (void)startRunTimer {
     

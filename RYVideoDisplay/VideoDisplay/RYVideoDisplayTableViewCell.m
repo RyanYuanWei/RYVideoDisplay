@@ -10,7 +10,6 @@
 #import "RYVideoDisplayModel.h"
 #import <PLPlayerKit/PLPlayerKit.h>
 #import <SDWebImage.h>
-#import <Masonry/Masonry.h>
 #import "VDFlashLabel.h"
 #import "XKMusicAnimationPlayView.h"
 #import "UIButton+XKEnlargeHitArea.h"
@@ -402,6 +401,41 @@
     }];
     self.videoInfoContainerView = videoInfoContainerView;
     
+    // 播放按钮
+    RYStartPlayImageView *startPlayView = [RYStartPlayImageView new];
+    startPlayView.hidden = YES;
+    [startPlayView setImage:[UIImage imageNamed:@"ry_ic_video_play"]];
+    [videoInfoContainerView addSubview:startPlayView];
+    [startPlayView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.offset(64);
+        make.center.equalTo(self.contentView);
+    }];
+    self.startPlayView = startPlayView;
+    
+    // 点赞/取消点赞动画视图
+    RYHeartImageView *heartImageView = [[RYHeartImageView alloc] initWithImage:[UIImage imageNamed:@"ry_ic_heart_red_big"]];
+    heartImageView.frame = CGRectMake(0, 0, 53, 34);
+    heartImageView.hidden = YES;
+    [videoInfoContainerView addSubview:heartImageView];
+    self.heartImageView = heartImageView;
+    
+    // 底部加载视图
+    UIView *loadingLineContainerView = [UIView new];
+    loadingLineContainerView.backgroundColor = [UIColor clearColor];
+    [videoInfoContainerView addSubview:loadingLineContainerView];
+    [loadingLineContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.offset(0);
+        make.trailing.offset(0);
+        make.height.offset(1);
+        make.bottom.offset(-44);
+    }];
+    RYLoadingLineLayer *loadingLineLayer = [RYLoadingLineLayer new];
+    loadingLineLayer.backgroundColor = [UIColor whiteColor].CGColor;
+    [loadingLineContainerView.layer addSublayer:loadingLineLayer];
+    loadingLineLayer.frame = CGRectMake(SCREEN_WIDTH / 2, 0, 1, 1);
+    loadingLineLayer.hidden = YES;
+    self.loadingLineLayer = loadingLineLayer;
+    
     // 滚动label
     UIImageView *musicImageView = [[UIImageView alloc] init];
     musicImageView.image = [UIImage imageNamed:@"ry_ic_note"];
@@ -409,7 +443,7 @@
     [videoInfoContainerView addSubview:musicImageView];
     [musicImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(8);
-        make.bottom.offset(-20);
+        make.bottom.equalTo(loadingLineContainerView.mas_top).offset(-10);
         make.width.height.equalTo(@(16));
     }];
     
@@ -459,7 +493,7 @@
     XKMusicAnimationPlayView *musicAnimationView = [XKMusicAnimationPlayView new];
     [videoInfoContainerView addSubview:musicAnimationView];
     [musicAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.offset(-25);
+        make.bottom.equalTo(loadingLineContainerView.mas_top).offset(-15);
         make.right.offset(-6);
         make.width.height.offset(100);
     }];
@@ -596,43 +630,6 @@
         make.centerY.mas_equalTo(headerButton.mas_centerY).offset(21.5);
     }];
     self.attentionButton = attentionButton;
-    
-// =================================== 其他视图 ===================================
-
-    // 播放按钮
-    RYStartPlayImageView *startPlayView = [RYStartPlayImageView new];
-    startPlayView.hidden = YES;
-    [startPlayView setImage:[UIImage imageNamed:@"ry_ic_video_play"]];
-    [videoInfoContainerView addSubview:startPlayView];
-    [startPlayView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.offset(64);
-        make.center.equalTo(self.contentView);
-    }];
-    self.startPlayView = startPlayView;
-    
-    // 点赞/取消点赞动画视图
-    RYHeartImageView *heartImageView = [[RYHeartImageView alloc] initWithImage:[UIImage imageNamed:@"ry_ic_heart_red_big"]];
-    heartImageView.frame = CGRectMake(0, 0, 53, 34);
-    heartImageView.hidden = YES;
-    [videoInfoContainerView addSubview:heartImageView];
-    self.heartImageView = heartImageView;
-    
-    // 底部加载视图
-    UIView *loadingLineContainerView = [UIView new];
-    loadingLineContainerView.backgroundColor = [UIColor clearColor];
-    [videoInfoContainerView addSubview:loadingLineContainerView];
-    [loadingLineContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.offset(0);
-        make.trailing.offset(0);
-        make.height.offset(1);
-        make.bottom.offset(-10);
-    }];
-    RYLoadingLineLayer *loadingLineLayer = [RYLoadingLineLayer new];
-    loadingLineLayer.backgroundColor = [UIColor whiteColor].CGColor;
-    [loadingLineContainerView.layer addSublayer:loadingLineLayer];
-    loadingLineLayer.frame = CGRectMake(SCREEN_WIDTH / 2, 0, 1, 1);
-    loadingLineLayer.hidden = YES;
-    self.loadingLineLayer = loadingLineLayer;
 }
 
 /**
