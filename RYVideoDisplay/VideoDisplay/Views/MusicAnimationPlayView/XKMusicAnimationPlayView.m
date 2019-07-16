@@ -34,7 +34,7 @@
 - (void)setupUI {
     self.backgroundColor = [UIColor clearColor];
     self.imageViewArray = [NSMutableArray array];
-    self.imageArray = @[@"xk_ic_video_display_note_one", @"xk_ic_video_display_note_two"];
+    self.imageArray = @[@"ry_ic_add_note1", @"ry_ic_add_note2"];
     self.image1= [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     self.image1.center = CGPointMake(70 * ScreenScale, 100 * ScreenScale - 5);
     self.image1.alpha = 0;

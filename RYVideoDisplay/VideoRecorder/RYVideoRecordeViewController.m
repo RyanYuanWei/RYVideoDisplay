@@ -20,7 +20,6 @@
     [self initializeSubviews];
 }
 
-
 #pragma mark - private method
 
 /**

@@ -16,6 +16,7 @@
 		551B557322C0B380000836BF /* RYVideoDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B556F22C0B380000836BF /* RYVideoDisplayViewController.m */; };
 		5555EA0D22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */; };
 		5559ECA722DDB3B800C37107 /* RYVideoRecordeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ECA622DDB3B800C37107 /* RYVideoRecordeViewController.m */; };
+		555D93ED22DDDA4F00C6DECB /* RYMusicRecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 555D93EC22DDDA4F00C6DECB /* RYMusicRecordButton.m */; };
 		55770D7D22D2ECAF008281B8 /* VDFlashLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7A22D2ECAF008281B8 /* VDFlashLabel.m */; };
 		55770D7E22D2ECAF008281B8 /* NSTimer+VDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7B22D2ECAF008281B8 /* NSTimer+VDAdd.m */; };
 		55770D7F22D2ECAF008281B8 /* UIView+VDFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55770D7C22D2ECAF008281B8 /* UIView+VDFrame.m */; };
@@ -46,6 +47,8 @@
 		5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XKEnlargeHitArea.m"; sourceTree = "<group>"; };
 		5559ECA522DDB3B800C37107 /* RYVideoRecordeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYVideoRecordeViewController.h; sourceTree = "<group>"; };
 		5559ECA622DDB3B800C37107 /* RYVideoRecordeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYVideoRecordeViewController.m; sourceTree = "<group>"; };
+		555D93EB22DDDA4F00C6DECB /* RYMusicRecordButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYMusicRecordButton.h; sourceTree = "<group>"; };
+		555D93EC22DDDA4F00C6DECB /* RYMusicRecordButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYMusicRecordButton.m; sourceTree = "<group>"; };
 		55770D7722D2ECAF008281B8 /* NSTimer+VDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+VDAdd.h"; sourceTree = "<group>"; };
 		55770D7822D2ECAF008281B8 /* VDFlashLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDFlashLabel.h; sourceTree = "<group>"; };
 		55770D7922D2ECAF008281B8 /* UIView+VDFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VDFrame.h"; sourceTree = "<group>"; };
@@ -93,12 +96,12 @@
 		5512235522D2DE6C00389AC1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5555EA0A22D48D7200FAB3A3 /* UIButton+XKEnlargeHitArea */,
-				55770D8622D2ED4D008281B8 /* RYLoadingLineLayer */,
-				55770D8522D2ED41008281B8 /* RYHeartImageView */,
-				55770D8422D2ED35008281B8 /* RYStartPlayImageView */,
-				55770D8022D2ED0C008281B8 /* MusicAnimationPlayView */,
+				55770D8622D2ED4D008281B8 /* LoadingLineLayer */,
+				55770D8522D2ED41008281B8 /* HeartImageView */,
+				55770D8422D2ED35008281B8 /* StartPlayImageView */,
 				55770D7622D2ECAF008281B8 /* VDFlashLabel */,
+				55770D8022D2ED0C008281B8 /* MusicAnimationPlayView */,
+				5559ECA922DDD9ED00C37107 /* MusicRecordButton */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +109,7 @@
 		5512235F22D2E76500389AC1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				5555EA0A22D48D7200FAB3A3 /* UIButton+XKEnlargeHitArea */,
 				5512236022D2E79800389AC1 /* RYVideoDisply-prefix.pch */,
 			);
 			path = "Support Files";
@@ -131,7 +135,8 @@
 				5555EA0B22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.h */,
 				5555EA0C22D48D9100FAB3A3 /* UIButton+XKEnlargeHitArea.m */,
 			);
-			path = "UIButton+XKEnlargeHitArea";
+			name = "UIButton+XKEnlargeHitArea";
+			path = "../VideoDisplay/Views/UIButton+XKEnlargeHitArea";
 			sourceTree = "<group>";
 		};
 		5559ECA422DDAAC800C37107 /* VideoRecorder */ = {
@@ -141,6 +146,15 @@
 				5559ECA622DDB3B800C37107 /* RYVideoRecordeViewController.m */,
 			);
 			path = VideoRecorder;
+			sourceTree = "<group>";
+		};
+		5559ECA922DDD9ED00C37107 /* MusicRecordButton */ = {
+			isa = PBXGroup;
+			children = (
+				555D93EB22DDDA4F00C6DECB /* RYMusicRecordButton.h */,
+				555D93EC22DDDA4F00C6DECB /* RYMusicRecordButton.m */,
+			);
+			path = MusicRecordButton;
 			sourceTree = "<group>";
 		};
 		55770D7622D2ECAF008281B8 /* VDFlashLabel */ = {
@@ -165,31 +179,31 @@
 			path = MusicAnimationPlayView;
 			sourceTree = "<group>";
 		};
-		55770D8422D2ED35008281B8 /* RYStartPlayImageView */ = {
+		55770D8422D2ED35008281B8 /* StartPlayImageView */ = {
 			isa = PBXGroup;
 			children = (
 				5512235622D2DFB600389AC1 /* RYStartPlayImageView.h */,
 				5512235722D2DFB600389AC1 /* RYStartPlayImageView.m */,
 			);
-			path = RYStartPlayImageView;
+			path = StartPlayImageView;
 			sourceTree = "<group>";
 		};
-		55770D8522D2ED41008281B8 /* RYHeartImageView */ = {
+		55770D8522D2ED41008281B8 /* HeartImageView */ = {
 			isa = PBXGroup;
 			children = (
 				5512235922D2E21000389AC1 /* RYHeartImageView.h */,
 				5512235A22D2E21000389AC1 /* RYHeartImageView.m */,
 			);
-			path = RYHeartImageView;
+			path = HeartImageView;
 			sourceTree = "<group>";
 		};
-		55770D8622D2ED4D008281B8 /* RYLoadingLineLayer */ = {
+		55770D8622D2ED4D008281B8 /* LoadingLineLayer */ = {
 			isa = PBXGroup;
 			children = (
 				5512235C22D2E5F300389AC1 /* RYLoadingLineLayer.h */,
 				5512235D22D2E5F300389AC1 /* RYLoadingLineLayer.m */,
 			);
-			path = RYLoadingLineLayer;
+			path = LoadingLineLayer;
 			sourceTree = "<group>";
 		};
 		55B9216922C09B4A0017EFF5 = {
@@ -376,6 +390,7 @@
 				5512235B22D2E21000389AC1 /* RYHeartImageView.m in Sources */,
 				55770D7F22D2ECAF008281B8 /* UIView+VDFrame.m in Sources */,
 				55B9217722C09B4A0017EFF5 /* AppDelegate.m in Sources */,
+				555D93ED22DDDA4F00C6DECB /* RYMusicRecordButton.m in Sources */,
 				551B557122C0B380000836BF /* RYVideoDisplayTableViewCell.m in Sources */,
 				551B557322C0B380000836BF /* RYVideoDisplayViewController.m in Sources */,
 				55770D7D22D2ECAF008281B8 /* VDFlashLabel.m in Sources */,

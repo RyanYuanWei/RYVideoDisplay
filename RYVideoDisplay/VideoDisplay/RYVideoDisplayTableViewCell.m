@@ -17,6 +17,7 @@
 #import "RYHeartImageView.h"
 #import "RYStartPlayImageView.h"
 #import "VDFlashLabel.h"
+#import "RYMusicRecordButton.h"
 
 @interface RYVideoDisplayTableViewCell () <PLPlayerDelegate>
 
@@ -33,7 +34,7 @@
 @property (nonatomic, strong) VDFlashLabel *flashLabel; /** 跑马灯 */
 @property (nonatomic, strong) UILabel *nameLabel; /** 作者名字 */
 @property (nonatomic, strong) UILabel *videoDescribeLabel; /** 视频描述 */
-@property (nonatomic, strong) UIButton *musicRecordButton; /** 唱片按钮 */
+@property (nonatomic, strong) RYMusicRecordButton *musicRecordButton; /** 唱片按钮 */
 @property (nonatomic, strong) XKMusicAnimationPlayView *musicAnimationView; /** 音符动画视图 */
 @property (nonatomic, strong) UILabel *shareCountLabel; /** 分享数量 */
 @property (nonatomic, strong) UIButton *shareButton; /** 分享按钮 */
@@ -196,6 +197,9 @@
     if (status == PLPlayerStatusPlaying || status == PLPlayerStatusCaching) {
         [self.player pause];
         [self.startPlayView showStartPlayView];
+        [self.flashLabel stopAutoScroll];
+        [self.musicAnimationView stopAnimation];
+        [self.musicRecordButton pauseMusicRecordButtonAnimation];
     }
 }
 
@@ -205,6 +209,9 @@
     if (status == PLPlayerStatusPaused) {
         [self.player resume];
         [self.startPlayView hiddenStartPlayView];
+        [self.flashLabel continueAutoScroll];
+        [self.musicAnimationView startAnimation];
+        [self.musicRecordButton startMusicRecordButtonAnimation];
     }
 }
 
@@ -500,7 +507,7 @@
     self.musicAnimationView = musicAnimationView;
     
     // 底部唱片按钮
-    UIButton *musicRecordButton = [UIButton new];
+    RYMusicRecordButton *musicRecordButton = [RYMusicRecordButton new];
     musicRecordButton.layer.cornerRadius = 22;
     musicRecordButton.layer.masksToBounds = YES;
     musicRecordButton.adjustsImageWhenDisabled = NO;
@@ -639,6 +646,10 @@
     PLPlayerStatus status = self.player.status;
     if (status == PLPlayerStatusOpen) {
         [self.player play];
+        [self.startPlayView hiddenStartPlayView];
+        [self.flashLabel continueAutoScroll];
+        [self.musicAnimationView startAnimation];
+        [self.musicRecordButton startMusicRecordButtonAnimation];
     }
 }
 
