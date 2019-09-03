@@ -33,7 +33,7 @@ static const NSInteger kVideoDisplayViewControllerPageSize = 7;
 
 #pragma mark public method
 
--(BOOL)prefersStatusBarHidden{
+-(BOOL)prefersStatusBarHidden {
     [super prefersStatusBarHidden];
     return YES;
 }
